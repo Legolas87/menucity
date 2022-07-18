@@ -4,10 +4,10 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>MobFire- Mobile Application Landing Page</title>
-      <meta name="MobFire" content="MobFire">
+      <title>Menu City- Mobile Application Landing Page</title>
+      <meta name="MenuCity" content="MenuCity">
       <!-- description -->
-      <meta name="MobFire" content="MobFire.- Mobile Application Landingpage">
+      <meta name="MenuCity" content="MenuCity.- Mobile Application Landingpage">
       <!-- keywords -->
       <meta name="keywords" content="Mobile Application">
       <!-- Favicon -->
@@ -51,22 +51,66 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
+
+
+     
    </head>
    <body>
+
+      <script type="text/javascript">
+
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
+
+
+         $(document).ready(function ( ) {
+        $("#form1").submit(function () {
+
+         
+         var $form = $("#form1");
+var data = getFormData($form);
+data = JSON.stringify(data)
+
+
+$.ajax({
+  type: "POST",
+  url: "http://vpn.gregsys.com:84/api/common/AddCompanyApplication",
+  data: data,
+  success: function(){$('#message').html("Thank you, the application has been send, we will contact you shortly");},
+  dataType: "json",
+  contentType : "application/json"
+});
+
+
+          
+            return false;
+        });
+      })
+    </script>
+
       <!-- ====== Preloader ====== -->
       <div class="preloader js-preloader flex-center">
          <img src="img/loader.gif" alt="Loader" />
       </div>
-      <div class="wraper" id="home">
+      <div class="wraper">
          <!-- ====== Header Start ====== -->
-         <header>
+         <header class="index-2" id="home">
             <div class="container">
                <div class="row">
-                  <div class="col-md-2 col-sm-3 col-xs-6 logo">
-                     <a href="index.html"><img src="img/logo.png" alt="MobFire"></a>
+                  <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                     <a href="index.html"><img src="img/logo.png" alt="Menu City"></a>                   
                   </div>
-                  <div class="col-md-10 col-sm-9 col-xs-6">
-                     <div class="menu move-right ani-gradiant">
+                  <div class="col-md-10 col-sm-8 col-xs-6">
+                     <div class="menu move-right">
                         <div class="toggle">
                            <span></span>
                         </div>
@@ -76,7 +120,6 @@
                            <li><a href="#features" title="Features">Features</a></li>
                            <li><a href="#screenshots" title="Screenshots">Screenshots</a></li>
                            <li><a href="#price-plans" title="Price Plans">Price Plans</a></li>
-                           <li><a href="#blog-post" title="Blog Post">Blog Post</a></li>
                            <li><a href="#review" title="Reviews">Reviews</a></li>
                            <li><a href="#contact-us" title="Contact Us">Contact Us</a></li>
                         </ul>
@@ -87,427 +130,245 @@
          </header>
          <!-- ====== Header End ====== -->
          <!-- ====== Slider Start ====== -->
-         <div class="slider-1">
-            <div class="move-right banner-mobile rs-parallaxlevel-1">
-               <img src="img/iphone-frame.png" alt="Iphone" class="img-responsive" />
-            </div>
-            <div class="mobil-screen-layer rs-parallaxlevel-1">
-               <div class="about_mobile">
-                  <img src="img/top-fold-screen.png" alt="Iphone Screen"  class="img-responsive" />
-               </div>
-            </div>
-            <div id="rev_slider_348_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="overexposure" data-source="gallery" style="background:transparent;padding:0px;">
-               <!-- START REVOLUTION SLIDER 5.4.3.3 fullscreen mode -->
-               <div id="rev_slider_348_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.3.3">
+         <div class="slider-2">
+            <div id="rev_slider_8_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="particle-effect-three6" data-source="gallery" style="background:#ffffff;padding:0px;">
+               <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+               <div id="rev_slider_8_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
                   <ul>
                      <!-- SLIDE  -->
-                     <li data-index="rs-968" data-transition="brightnesscross" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="img/exp_bg1-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                     <li data-index="rs-16" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Example One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="img/exp_bg1.jpg"  alt=""  data-lazyload="img/exp_bg1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="6" class="rev-slidebg" data-no-retina>
+                        <img src="img/transparent.png" data-bgcolor='#ffffff' style='background:#ffffff' alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
-                        <div id="rrzm_968" class="rev_row_zone rev_row_zone_middle" style="z-index: 11;">
-                           <!-- LAYER NR. 1 -->
-                           <div class="tp-caption rs-parallaxlevel-2" 
-                              id="slide-968-layer-7" 
-                              data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" 
-                              data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-                              data-width="auto"
-                              data-height="none"
-                              data-whitespace="nowrap"
-                              data-type="row" 
-                              data-columnbreak="2" 
-                              data-responsive_offset="on" 
-                              data-responsive="off"
-                              data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                              data-margintop="[0,0,0,0]"
-                              data-marginright="[0,0,0,0]"
-                              data-marginbottom="[0,0,0,0]"
-                              data-marginleft="[0,0,0,0]"
-                              data-textAlign="['inherit','inherit','inherit','inherit']"
-                              style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0px;">
-                              <!-- LAYER NR. 2 -->
-                              <div class="tp-caption  " 
-                                 id="slide-968-layer-8" 
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" 
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','100','100']" 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-type="column" 
-                                 data-responsive_offset="on" 
-                                 data-responsive="off"
-                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                 data-columnwidth="50%"
-                                 data-verticalalign="top"
-                                 data-margintop="[0,0,0,0]"
-                                 data-marginright="[0,0,0,0]"
-                                 data-marginbottom="[0,0,0,0]"
-                                 data-marginleft="[0,0,0,0]"
-                                 data-textAlign="['inherit','inherit','inherit','inherit']"
-                                 style="z-index: 6; width: 100%;">
-                                 <!-- LAYER NR. 3 -->
-                                 <div class="tp-caption slider-content tp-resizeme" 
-                                    id="slide-968-layer-1" 
-                                    data-x="['left','left','left','left']" data-hoffset="['0','50','50','40']" 
-                                    data-y="['top','top','top','top']" data-voffset="['0','170','170','167']" 
-                                    data-letterspacing="['15','15','10','7']"
-                                    data-width="['100%','100%','100%','100%']"
-                                    data-height="none"
-                                    data-whitespace="normal"
-                                    data-type="text" 
-                                    data-responsive_offset="on" 
-                                    data-frames='[{"delay":"+290","split":"chars","splitdelay":0.05000000000000000277555756156289135105907917022705078125,"speed":2000,"split_direction":"forward","frame":"0","from":"opacity:0;","color":"#000000","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","color":"transparent","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                    data-margintop="[0,0,0,0]"
-                                    data-marginright="[0,0,0,0]"
-                                    data-marginbottom="[30,31,26,26]"
-                                    data-marginleft="[0,0,0,0]"
-                                    data-textAlign="['inherit','inherit','inherit','inherit']"
-                                    data-paddingtop="[0,0,0,0]"
-                                    data-paddingright="[0,0,0,0]"
-                                    data-paddingbottom="[0,0,0,0]"
-                                    data-paddingleft="[0,0,0,0]">Promote your mobile app with this landing page</div>
-                                 <!-- LAYER NR. 4 -->
-                                 <div class="tp-caption tp-shape bottom-border tp-shapewrapper  tp-resizeme" 
-                                    id="slide-968-layer-3" 
-                                    data-x="['left','left','left','left']" data-hoffset="['0','53','53','42']" 
-                                    data-y="['top','top','top','top']" data-voffset="['0','440','498','373']" 
-                                    data-width="50"
-                                    data-height="1"
-                                    data-whitespace="['normal','nowrap','nowrap','nowrap']"
-                                    data-type="shape" 
-                                    data-responsive_offset="on" 
-                                    data-frames='[{"delay":"+1490","speed":2000,"frame":"0","from":"sX:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                    data-margintop="[0,0,0,0]"
-                                    data-marginright="[0,0,0,0]"
-                                    data-marginbottom="[0,0,0,0]"
-                                    data-marginleft="[0,0,0,0]"
-                                    data-textAlign="['inherit','inherit','inherit','inherit']"
-                                    data-paddingtop="[0,0,0,0]"
-                                    data-paddingright="[0,0,0,0]"
-                                    data-paddingbottom="[0,0,0,0]"
-                                    data-paddingleft="[0,0,0,0]"
-                                    style="z-index: 9; display: block;background-color:rgb(0,0,0);"> </div>
-                              </div>
-                              <!-- LAYER NR. 5 -->
-                              <div class="tp-caption  " 
-                                 id="slide-968-layer-9" 
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" 
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','100','100']" 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-type="column" 
-                                 data-responsive_offset="on" 
-                                 data-responsive="off"
-                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                 data-columnwidth="50%"
-                                 data-verticalalign="top"
-                                 data-margintop="[0,0,0,0]"
-                                 data-marginright="[0,0,0,0]"
-                                 data-marginbottom="[0,0,0,0]"
-                                 data-marginleft="[0,0,0,0]"
-                                 data-textAlign="['inherit','inherit','inherit','inherit']"
-                                 data-paddingtop="[0,0,0,0]"
-                                 data-paddingright="[0,0,0,0]"
-                                 data-paddingbottom="[0,0,0,0]"
-                                 data-paddingleft="[0,0,0,0]"
-                                 style="z-index: 10; width: 100%;">           </div>
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption" 
+                           id="slide-16-layer-15" 
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                           data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                           data-width="full-proportional"
+                           data-height="full-proportional"
+                           data-whitespace="nowrap"
+                           data-type="image" 
+                           data-basealign="slide" 
+                           data-responsive_offset="off" 
+                           data-responsive="off"
+                           data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['inherit','inherit','inherit','inherit']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,0]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,0,0,0]"
+                           data-blendmode="overlay"
+                           style="z-index: 5;"><img src="img/blurbg7.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1920" height="1080" data-no-retina> </div>
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption tp-resizeme heading" 
+                           id="slide-16-layer-6" 
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                           data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                           data-fontsize="['60','60','40','40']"
+                           data-lineheight="['80','80','60','60']"
+                           data-width="none"
+                           data-height="none"
+                           data-whitespace="nowrap"
+                           data-type="text" 
+                           data-responsive_offset="on" 
+                           data-wrapper_class="tp-nopointer" 
+                           data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"sX:2;sY:3;opacity:0;fb:10px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['center','center','center','center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,0]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,0,0,0]">
+                           <h1>Menu City brings restaurant meals to people at work</h1>
+                        </div>
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption rev-btn tp-resizeme download-from" id="slide-16-layer-17"
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                           data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
+                           data-whitespace="nowrap"
+                           data-type="button"
+                           data-actions=''
+                           data-responsive_offset="on"
+                           data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"y:100px;sX:2;sY:3;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;","style":"c:rgba(255,255,255,1);"}]'
+                           data-textAlign="['inherit','inherit','inherit','inherit']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[35,35,35,35]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[35,35,35,35]"
+                           data-blendmode="multiply"
+                           style="z-index: 8; white-space: nowrap; outline:none;">
+                           <div class="download">
+                              <a href="https://apps.apple.com/us/app/menu-city/id1518496989"><img src="img/appstore.png" alt="App Store"></a>
                            </div>
-                           <!-- LAYER NR. 6 -->
-                           <div class="tp-caption   rs-parallaxlevel-3" 
-                              id="slide-968-layer-10" 
-                              data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" 
-                              data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-                              data-width="none"
-                              data-height="none"
-                              data-whitespace="nowrap"
-                              data-type="row" 
-                              data-columnbreak="2" 
-                              data-responsive_offset="on" 
-                              data-responsive="off"
-                              data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                              data-margintop="[0,0,0,0]"
-                              data-marginright="[0,0,0,0]"
-                              data-marginbottom="[0,0,0,0]"
-                              data-marginleft="[0,0,0,0]"
-                              data-textAlign="['inherit','inherit','inherit','inherit']"
-                              data-paddingtop="[0,0,0,0]"
-                              data-paddingright="[50,50,30,30]"
-                              data-paddingbottom="[0,0,0,0]"
-                              data-paddingleft="[50,50,30,30]"
-                              style="z-index: 11; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0px;">
-                              <!-- LAYER NR. 7 -->
-                              <div class="tp-caption  " 
-                                 id="slide-968-layer-11" 
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" 
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','100','100']" 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-type="column" 
-                                 data-responsive_offset="on" 
-                                 data-responsive="off"
-                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                 data-columnwidth="50%"
-                                 data-verticalalign="top"
-                                 data-margintop="[0,0,0,0]"
-                                 data-marginright="[0,0,0,0]"
-                                 data-marginbottom="[0,0,0,0]"
-                                 data-marginleft="[0,0,0,0]"
-                                 data-textAlign="['inherit','inherit','inherit','inherit']"
-                                 data-paddingtop="[0,0,0,0]"
-                                 data-paddingright="[0,0,0,0]"
-                                 data-paddingbottom="[0,0,0,0]"
-                                 data-paddingleft="[0,0,0,0]"
-                                 style="z-index: 12; width: 100%;">           </div>
-                              <!-- LAYER NR. 8 -->
-                              <div class="tp-caption  " 
-                                 id="slide-968-layer-12" 
-                                 data-x="['left','left','left','left']" data-hoffset="['100','100','100','100']" 
-                                 data-y="['top','top','top','top']" data-voffset="['100','100','100','100']" 
-                                 data-width="none"
-                                 data-height="none"
-                                 data-whitespace="nowrap"
-                                 data-type="column" 
-                                 data-responsive_offset="on" 
-                                 data-responsive="off"
-                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                 data-columnwidth="50%"
-                                 data-verticalalign="top"
-                                 data-margintop="[0,0,0,0]"
-                                 data-marginright="[0,0,0,0]"
-                                 data-marginbottom="[0,0,0,0]"
-                                 data-marginleft="[0,0,0,0]"
-                                 data-textAlign="['inherit','inherit','inherit','inherit']"
-                                 data-paddingtop="[0,0,0,0]"
-                                 data-paddingright="[0,0,0,0]"
-                                 data-paddingbottom="[0,0,0,0]"
-                                 data-paddingleft="[20,20,0,0]"
-                                 style="z-index: 13; width: 100%;">
-                              </div>
+                           <div class="download">
+                              <a href="https://play.google.com/store/apps/details?id=com.mc.menucity"><img src="img/playstore.png" alt="Play Store"></a>
                            </div>
                         </div>
                      </li>
                   </ul>
                </div>
-            </div>
-            <!-- END REVOLUTION SLIDER -->
-            <script>
-               var revapi348,
-               tpj=jQuery;
-               
-               tpj(document).ready(function() {
-               if(tpj("#rev_slider_348_1").revolution == undefined){
-               revslider_showDoubleJqueryError("#rev_slider_348_1");
-               }else{
-               revapi348 = tpj("#rev_slider_348_1").show().revolution({
-               sliderType:"standard",
-               jsFileLocation:"//server.local/revslider/wp-content/plugins/revslider/public/assets/js/",
-               sliderLayout:"fullscreen",
-               dottedOverlay:"none",
-               delay:12000,
-                        particles: {startSlide: "first", endSlide: "last", zIndex: "1",
-                           particles: {
-                              number: {value: 100}, color: {value: "#000000"},
-                              shape: {
-                                 type: "circle", stroke: {width: 0, color: "#000000", opacity:0.2},
-                                 image: {src: ""}
-                              },
-                              opacity: {value: 0.75, random: true, min: 0.25, anim: {enable: false, speed: 3, opacity_min: 0, sync: false}},
-                              size: {value: 2, random: true, min: 0.5, anim: {enable: false, speed: 40, size_min: 1, sync: false}},
-                              line_linked: {enable: false, distance: 150, color: "#000000", opacity: 0.4, width: 1},
-                              move: {enable: true, speed: 1, direction: "top", random: true, min_speed: 3, straight: false, out_mode: "out"}},
-                           interactivity: {
-                              events: {onhover: {enable: false, mode: "repulse"}, onclick: {enable: false, mode: "repulse"}},
-                              modes: {grab: {distance: 400, line_linked: {opacity: 0.5}}, bubble: {distance: 400, size: 40, opacity: 0.4}, repulse: {distance: 200}}
+               <!-- END REVOLUTION SLIDER -->
+               <script>
+                  var tpj=jQuery;
+                  var revapi8;
+                  tpj(document).ready(function() {
+                     if(tpj("#rev_slider_8_1").revolution == undefined){
+                        revslider_showDoubleJqueryError("#rev_slider_8_1");
+                     }else{
+                        revapi8 = tpj("#rev_slider_8_1").show().revolution({
+                           sliderType:"hero",
+                           jsFileLocation:"revolution/js/",
+                           sliderLayout:"fullscreen",
+                           dottedOverlay:"none",
+                           delay:9000,
+                           particles: {startSlide: "first", endSlide: "last", zIndex: "1",
+                              particles: {
+                                 number: {value: 300}, color: {value: "#000000"},
+                                 shape: {
+                                    type: "circle", stroke: {width: 0, color: "#ffffff", opacity: 1},
+                                    image: {src: ""}
+                                 },
+                                 opacity: {value: 0.1, random: false, min: 0.25, anim: {enable: false, speed: 1, opacity_min: 0, sync: false}},
+                                 size: {value: 1, random: true, min: 0.5, anim: {enable: false, speed: 40, size_min: 1, sync: false}},
+                                 line_linked: {enable: true, distance: 80, color: "#000000", opacity: 0.35, width: 1},
+                                 move: {enable: true, speed: 1, direction: "right", random: true, min_speed: 3, straight: false, out_mode: "out"}},
+                              interactivity: {
+                                 events: {onhover: {enable: true, mode: "repulse"}, onclick: {enable: true, mode: "bubble"}},
+                                 modes: {grab: {distance: 400, line_linked: {opacity: 0.5}}, bubble: {distance: 400, size: 100, opacity: 1}, repulse: {distance: 75}}
+                              }
+                           },
+                           navigation: {
+                           },
+                           responsiveLevels:[1240,1024,778,480],
+                           visibilityLevels:[1240,1024,778,480],
+                           gridwidth:[1240,1024,778,480],
+                           gridheight:[868,768,960,720],
+                           lazyType:"none",
+                           parallax: {
+                              type:"scroll",
+                              origo:"slidercenter",
+                              speed:400,
+                              levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,0,55],
+                           },
+                           shadow:0,
+                           spinner:"off",
+                           autoHeight:"off",
+                           fullScreenAutoWidth:"off",
+                           fullScreenAlignForce:"off",
+                           fullScreenOffsetContainer: "",
+                           fullScreenOffset: "60px",
+                           disableProgressBar:"on",
+                           hideThumbsOnMobile:"off",
+                           hideSliderAtLimit:0,
+                           hideCaptionAtLimit:0,
+                           hideAllCaptionAtLilmit:0,
+                           debugMode:false,
+                           fallbacks: {
+                              simplifyAll:"off",
+                              disableFocusListener:false,
                            }
-                        },
-               navigation: {
-                  keyboardNavigation:"off",
-                  keyboard_direction: "horizontal",
-                  mouseScrollNavigation:"off",
-                              mouseScrollReverse:"default",
-                  onHoverStop:"off",
-                  arrows: {
-                     style:"uranus",
-                     enable:false,
-                     hide_onmobile:false,
-                     hide_onleave:false,
-                     tmp:'',
-                     left: {
-                        h_align:"right",
-                        v_align:"bottom",
-                        h_offset:60,
-                        v_offset:10
-                     },
-                     right: {
-                        h_align:"right",
-                        v_align:"bottom",
-                        h_offset:10,
-                        v_offset:10
+                        });
                      }
-                  }
-               },
-               responsiveLevels:[1240,1024,778,480],
-               visibilityLevels:[1240,1024,778,480],
-               gridwidth:[1240,1024,778,480],
-               gridheight:[868,768,960,720],
-               lazyType:"smart",
-               parallax: {
-                  type:"scroll",
-                  origo:"slidercenter",
-                  speed:400,
-                  speedbg:1500,
-                  speedls:1000,
-                  levels:[5,10,15,20,25,30,35,40,60,46,-10,-15,-20,-25,-30,55],
-               },
-               shadow:0,
-               spinner:"off",
-               stopLoop:"off",
-               stopAfterLoops:-1,
-               stopAtSlide:-1,
-               shuffle:"off",
-               autoHeight:"off",
-               fullScreenAutoWidth:"off",
-               fullScreenAlignForce:"off",
-               fullScreenOffsetContainer: "",
-               fullScreenOffset: "",
-               hideThumbsOnMobile:"off",
-               hideSliderAtLimit:0,
-               hideCaptionAtLimit:0,
-               hideAllCaptionAtLilmit:0,
-               debugMode:false,
-               fallbacks: {
-                  simplifyAll:"off",
-                  nextSlideOnWindowFocus:"off",
-                  disableFocusListener:false,
-               }
-               });
-               }
-               
-                   RsParticlesAddOn(revapi348);
-               try{initSocialSharing("348")} catch(e){}
-               });   /*ready*/
-            </script>
+                  
+                         RsParticlesAddOn(revapi8);
+                  });   /*ready*/
+               </script>
+            </div>
+            <div class="about_mobile">
+               <img src="img/iphone-l.png" class="img-responsive" alt="Iphone" />
+            </div>
          </div>
          <!-- ====== Slider End ====== -->
-         <main>
+         <main class="index-2">
             <!-- ====== About Us Start ====== -->
-            <section id="about-us">
+            <section id="about-us" class="index-2">
                <div class="container">
-                  <div class="row">
-                     <div class="section-heading d-none">
-                        <h2>About Us</h2>
-                     </div>
-                     <div class="content">
-                        <div class="col-md-12">
-                           <div class="col-md-5 col-sm-5 col-xs-5 about-pic-sec">
-                              <img src="img/iphone-frame-2.png" alt="Iphone" class="img-responsive" />
+                  <div class="section-heading">
+                     <h2>About Us</h2>
+                     <div class="sub-heading">Quisque fermentum a odio in porta. Sed ut hendrerit odio. Nullam eleifend vestibulum augue id molestie. Sed suscipit tortor eu metus suscipit consectetur. Donec viverra ultrices pharetra. Proin ex ante, ultricies ut urna sit amet, molestie maximus tortor. Integer pellentesque sem non dui fringilla, quis tincidunt elit vulputate. </div>
+                  </div>
+                  <div class="content">
+                     <div id="counter" class="counter-sec">
+                        <div class="row">
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-download-to-storage-drive"></i>
+                              <h2><span class="counter">51</span>K+</h2>
+                              <div class="title">Downloads</div>
                            </div>
-                           <div class="col-md-7 col-sm-7 col-xs-7 about-content-sec">
-                              <article>
-                                 <div class="app-icon ani-gradiant box-shadow"><img src="img/ios.png" alt="" /></div>
-                                 <h2>About Us</h2>
-                                 <p>Mauris vestibulum ligula fringilla dui bibendum, aliquam pulvinar erat sollicitudin. Pellentesque dapibus nulla eu nunc maximus gravida. Phasellus pellentesque eget risus blandit dictum. Cras consectetur quam dui, vitae molestie metus dictum nec. Maecenas vulputate velit ut lacinia ultricies. Nullam ac euismod urna. Maecenas scelerisque sed urna sit amet pretium. </p>
-                              </article>
-                              <div id="counter" class="counter-sec">
-                                 <div class="row">
-                                    <div class="counter-column col-md-3 col-sm-3 col-xs-3">
-                                       <i class="flaticon flaticon-download-to-storage-drive"></i>
-                                       <h4><span class="counter">51</span>K+</h4>
-                                       <div class="title">Downloads</div>
-                                    </div>
-                                    <div class="counter-column col-md-3 col-sm-3 col-xs-3">
-                                       <i class="flaticon flaticon-good-mood-emoticon"></i>
-                                       <h4><span class="counter">12</span>K+</h4>
-                                       <div class="title">Happy Client</div>
-                                    </div>
-                                    <div class="counter-column col-md-3 col-sm-3 col-xs-3">
-                                       <i class="flaticon flaticon-award"></i>
-                                       <h4><span class="counter">15</span></h4>
-                                       <div class="title">Design Awards</div>
-                                    </div>
-                                    <div class="counter-column col-md-3 col-sm-3 col-xs-3">
-                                       <i class="flaticon flaticon-teamwork"></i>
-                                       <h4><span class="counter">51</span>K</h4>
-                                       <div class="title">Active Members</div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="download-from">
-                                 <div class="download">
-                                    <a href="javascript:void(0)"><img class="img-responsive" src="img/appstore.png" alt="App Store"></a>
-                                 </div>
-                                 <div class="download">
-                                    <a href="javascript:void(0)"><img class="img-responsive" src="img/playstore.png" alt="Play Store"></a>
-                                 </div>
-                              </div>
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-good-mood-emoticon"></i>
+                              <h2><span class="counter">12</span>K+</h2>
+                              <div class="title">Happy Client</div>
+                           </div>
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-award"></i>
+                              <h2><span class="counter">15</span></h2>
+                              <div class="title">Design Awards</div>
+                           </div>
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-teamwork"></i>
+                              <h2><span class="counter">51</span>K</h2>
+                              <div class="title">Active Members</div>
                            </div>
                         </div>
-                        <div class="clearfix"></div>
                      </div>
                   </div>
                </div>
-               <div id="bg_2"></div>
             </section>
             <!-- ====== About Us End ====== -->
             <!-- ====== Features Start ====== -->
-            <section id="features" class="index-1">
+            <section id="features" class="index-2">
                <div class="container">
-                  <div class="row">
-                     <div class="content">
-                        <div class="col-md-12">
-                           <div class="row">
-                              <div class="col-md-4 col-sm-6 col-xs-12">
-                                 <div class="section-heading">
-                                    <h2>Our Features</h2>
-                                    <div class="sub-heading">Mauris pellentesque aliquam turpis, eget sodales erat rutrum sed. Duis convallis dolor eget pulvinar fermentum. Donec porta tempus elit, at porttitor nisi ullamcorper ac. Nulla non hendrerit quam.</div>
+                  <div class="content">
+                     <div class="row">
+                        <div class="col-md-9 col-sm-9 col-xs-12 move-right">
+                           <div class="col-md-6 col-sm-12 col-xs-12 section-heading">
+                              <h2>Our Features</h2>
+                              <div class="sub-heading">Phasellus gravida, tortor ac consectetur fermentum, magna lacus pretium velit, ut tempor tellus est ut turpis. Aliquam erat volutpat. Sed at urna ex. Mauris pellentesque aliquam turpis, eget sodales erat rutrum sed. Duis convallis dolor eget pulvinar fermentum.</div>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-system"></i>
                                  </div>
+                                 <h6>Powerfull System</h6>
+                                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</p>
                               </div>
-                              <div class="col-md-4 col-sm-6 col-xs-12">
-                                 <div class="card box-shadow">
-                                    <div class="icon">
-                                       <i class="flaticon flaticon-system"></i>
-                                    </div>
-                                    <h6>Powerfull System</h6>
-                                    <p>Sed posuere arcu quis nisl accumsan, quis feugiat tortor porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</p>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-avatar"></i>
                                  </div>
+                                 <h6>Free Accounts</h6>
+                                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</p>
                               </div>
-                              <div class="col-md-4 col-sm-6 col-xs-12">
-                                 <div class="card box-shadow">
-                                    <div class="icon">
-                                       <i class="flaticon flaticon-avatar"></i>
-                                    </div>
-                                    <h6>Free Accounts</h6>
-                                    <p>Sed posuere arcu quis nisl accumsan, quis feugiat tortor porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</p>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-key"></i>
                                  </div>
+                                 <h6>Ease Of Access</h6>
+                                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</p>
                               </div>
-                              <div class="col-md-4 col-sm-6 col-xs-12">
-                                 <div class="card box-shadow">
-                                    <div class="icon">
-                                       <i class="flaticon flaticon-key"></i>
-                                    </div>
-                                    <h6>Ease Of Access</h6>
-                                    <p>Sed posuere arcu quis nisl accumsan, quis feugiat tortor porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</p>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-global"></i>
                                  </div>
+                                 <h6>Time & Language</h6>
+                                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</p>
                               </div>
-                              <div class="col-md-4 col-sm-6 col-xs-12">
-                                 <div class="card box-shadow">
-                                    <div class="icon">
-                                       <i class="flaticon flaticon-global"></i>
-                                    </div>
-                                    <h6>Time & Language</h6>
-                                    <p>Sed posuere arcu quis nisl accumsan, quis feugiat tortor porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</p>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-shield"></i>
                                  </div>
-                              </div>
-                              <div class="col-md-4 col-sm-6 col-xs-12">
-                                 <div class="card box-shadow">
-                                    <div class="icon">
-                                       <i class="flaticon flaticon-shield"></i>
-                                    </div>
-                                    <h6>Updates & Security</h6>
-                                    <p>Sed posuere arcu quis nisl accumsan, quis feugiat tortor porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</p>
-                                 </div>
+                                 <h6>Updates & Security</h6>
+                                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</p>
                               </div>
                            </div>
                         </div>
@@ -517,14 +378,14 @@
             </section>
             <!-- ====== Features End ====== -->
             <!-- ====== Screenshots Start ====== -->
-            <section id="screenshots">
-               <div class="container-fluid">
-                  <div class="section-heading center">
+            <section id="screenshots" class="index-2">
+               <div class="container">
+                  <div class="section-heading on-dark center">
                      <h2>Screenshots</h2>
                      <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
                   </div>
                   <div class="content">
-                     <div class="owl-one owl-carousel owl-theme">
+                     <div class="owl-three owl-carousel owl-theme">
                         <div class="item">
                            <img src="img/screen-1.png" alt="Iphone" /> 
                         </div>
@@ -570,264 +431,141 @@
             </section>
             <!-- ====== Screenshots End ====== -->
             <!-- ====== Price Plans Start ====== -->
-            <section id="price-plans">
+            <section id="price-plans" class="index-2">
                <div class="container">
-                  <div class="section-heading center">
-                     <h2>Price Plans</h2>
-                     <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
-                  </div>
                   <div class="content">
                      <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                           <div class="price_card box-shadow">
-                              <div class="plan-title">
-                                 <h5>Personal</h5>
-                              </div>
-                              <div class="price_amount"> From<strong>$9</strong><span>/ month</span></div>
-                              <div class="features">
-                                 <ul>
-                                    <li>One Feature</li>
-                                    <li class="deactive">Another Feature</li>
-                                    <li class="deactive">More Feature</li>
-                                    <li class="deactive">Extra Feature</li>
-                                 </ul>
-                              </div>
-                              <div class="purchase"> <a class="purchase_now" href="javascript:void(0)" title="Purchase Now">Purchase Now</a> </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 move-right">
+                           <div class="section-heading">
+                              <h2>Price Plans</h2>
+                              <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
+                              <p>Mauris elit tortor, finibus eget pellentesque quis, bibendum non dui. Praesent suscipit nunc id erat sodales blandit. Integer gravida augue in rhoncus tempus. Cras ullamcorper dolor ac dictum mollis.</p>
+                              <p>&nbsp;</p>
+                              <p>Phasellus felis leo, maximus vitae varius sit amet, pretium eget purus.</p>
                            </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                           <div class="price_card box-shadow">
-                              <div class="plan-title">
-                                 <h5>Ultimate</h5>
+                        <div class="col-md-8 col-sm-12 col-xs-12 price-sec">
+                           <div class="row">
+                              <div class="col-md-6 col-sm-6 col-xs-12 ultimate">
+                                 <div class="price_card box-shadow">
+                                    <div class="plan-title">
+                                       <h5>Ultimate</h5>
+                                    </div>
+                                    <div class="price_amount"> From<strong>$199</strong><span>/ month</span></div>
+                                    <div class="features">
+                                       <ul>
+                                          <li>One Feature</li>
+                                          <li>Another Feature</li>
+                                          <li>More Feature</li>
+                                          <li>Extra Feature</li>
+                                       </ul>
+                                    </div>
+                                    <div class="purchase"> <a class="purchase_now" href="javascript:void(0)" title="Purchase Now">Purchase Now</a> </div>
+                                 </div>
                               </div>
-                              <div class="price_amount"> From<strong>$199</strong><span>/ month</span></div>
-                              <div class="features">
-                                 <ul>
-                                    <li>One Feature</li>
-                                    <li>Another Feature</li>
-                                    <li>More Feature</li>
-                                    <li>Extra Feature</li>
-                                 </ul>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                 <div class="price_card box-shadow">
+                                    <div class="plan-title">
+                                       <h5>Business</h5>
+                                    </div>
+                                    <div class="price_amount"> From<strong>$99</strong><span>/ month</span></div>
+                                    <div class="features">
+                                       <ul>
+                                          <li>One Feature</li>
+                                          <li>Another Feature</li>
+                                          <li>More Feature</li>
+                                          <li class="deactive">Extra Feature</li>
+                                       </ul>
+                                    </div>
+                                    <div class="purchase"> <a class="purchase_now" href="javascript:void(0)" title="Purchase Now">Purchase Now</a> </div>
+                                 </div>
                               </div>
-                              <div class="purchase"> <a class="purchase_now" href="javascript:void(0)" title="Purchase Now">Purchase Now</a> </div>
-                           </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                           <div class="price_card box-shadow">
-                              <div class="plan-title">
-                                 <h5>Business</h5>
-                              </div>
-                              <div class="price_amount"> From<strong>$99</strong><span>/ month</span></div>
-                              <div class="features">
-                                 <ul>
-                                    <li>One Feature</li>
-                                    <li>Another Feature</li>
-                                    <li>More Feature</li>
-                                    <li class="deactive">Extra Feature</li>
-                                 </ul>
-                              </div>
-                              <div class="purchase"> <a class="purchase_now" href="javascript:void(0)" title="Purchase Now">Purchase Now</a> </div>
                            </div>
                         </div>
                      </div>
-                     <div class="clearfix"></div>
                   </div>
+                  <div class="clearfix"></div>
                </div>
             </section>
             <!-- ====== Price Plans End ====== -->
-            <!-- ====== Blog Start ====== -->
-            <section id="blog-post">
+            <!-- ====== Review Start ====== -->
+            <section id="review" class="index-2">
                <div class="container">
                   <div class="section-heading center">
-                     <h2>Blog Posts</h2>
+                     <h2>Reviews</h2>
                      <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
                   </div>
                   <div class="content">
-                     <div class="blog-slider owl-four owl-carousel owl-theme">
-                        <div class="item blog-card">
-                           <div class="post-img">
-                              <img src="img/home-blog-post-1.jpg" alt="Post" />
-                              <div class="posted_on"> <span class="date">04</span> <span class="month">Sept.</span> </div>
-                           </div>
-                           <div class="post-detail">
-                              <div class="post-title">
-                                 <a href="blog-right-sidebar.html">Standard dummy text ever since</a>
+                     <div class="owl-two owl-carousel owl-theme">
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp1.jpg" alt="Client">
                               </div>
-                              <div class="posted_by">Posted By - <a href="javascript:void(0)">Admin</a> </div>
-                              <div class="about_post">
-                                 <p>Integer et nulla eget ligula iaculis congue quis eu dui. In tempus nulla at aliquet pharetra. </p>
+                              <div class="client-detail">
+                                 <div class="client-name">Tania Andrew</div>
+                                <p>Themeforest User</p>
                               </div>
                            </div>
-                           <div class="clearfix"></div>
                         </div>
-                        <div class="item blog-card">
-                           <div class="post-img">
-                              <img src="img/home-blog-post-2.jpg" alt="Post" />
-                              <div class="posted_on"> <span class="date">05</span> <span class="month">Sept.</span> </div>
-                           </div>
-                           <div class="post-detail">
-                              <div class="post-title">
-                                 <a href="blog-right-sidebar.html">It has survived not only five centuries</a>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp2.jpg" alt="Client">
                               </div>
-                              <div class="posted_by">Posted By - <a href="javascript:void(0)">Admin</a> </div>
-                              <div class="about_post">
-                                 <p>Integer et nulla eget ligula iaculis congue quis eu dui. In tempus nulla at aliquet pharetra. </p>
+                              <div class="client-detail">
+                                 <div class="client-name">Alec Thompson</div>
+                                    <p>Accountant</p>
                               </div>
                            </div>
-                           <div class="clearfix"></div>
                         </div>
-                        <div class="item blog-card">
-                           <div class="post-img">
-                              <img src="img/home-blog-post-1.jpg" alt="Post" />
-                              <div class="posted_on"> <span class="date">06</span> <span class="month">Sept.</span> </div>
-                           </div>
-                           <div class="post-detail">
-                              <div class="post-title">
-                                 <a href="blog-right-sidebar.html">There are many variations of passages  </a>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp3.jpg" alt="Client">
                               </div>
-                              <div class="posted_by">Posted By - <a href="javascript:void(0)">Admin</a> </div>
-                              <div class="about_post">
-                                 <p>Integer et nulla eget ligula iaculis congue quis eu dui. In tempus nulla at aliquet pharetra. </p>
+                              <div class="client-detail">
+                                 <div class="client-name">Molly Robinson</div>
+                                    <p>Manager</p>
                               </div>
                            </div>
-                           <div class="clearfix"></div>
                         </div>
-                        <div class="item blog-card">
-                           <div class="post-img">
-                              <img src="img/home-blog-post-2.jpg" alt="Post" />
-                              <div class="posted_on"> <span class="date">07</span> <span class="month">Sept.</span> </div>
-                           </div>
-                           <div class="post-detail">
-                              <div class="post-title">
-                                 <a href="blog-right-sidebar.html">It has survived not only five centuries</a>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp1.jpg" alt="Client">
                               </div>
-                              <div class="posted_by">Posted By - <a href="javascript:void(0)">Admin</a> </div>
-                              <div class="about_post">
-                                 <p>Integer et nulla eget ligula iaculis congue quis eu dui. In tempus nulla at aliquet pharetra. </p>
+                              <div class="client-detail">
+                                 <div class="client-name">Tania Andrew</div>
+<p>Themeforest User</p>
                               </div>
                            </div>
-                           <div class="clearfix"></div>
                         </div>
-                        <div class="item blog-card">
-                           <div class="post-img">
-                              <img src="img/home-blog-post-1.jpg" alt="Post" />
-                              <div class="posted_on"> <span class="date">08</span> <span class="month">Sept.</span> </div>
-                           </div>
-                           <div class="post-detail">
-                              <div class="post-title">
-                                 <a href="blog-right-sidebar.html">There are many variations of passages </a>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp2.jpg" alt="Client">
                               </div>
-                              <div class="posted_by">Posted By - <a href="javascript:void(0)">Admin</a> </div>
-                              <div class="about_post">
-                                 <p>Integer et nulla eget ligula iaculis congue quis eu dui. In tempus nulla at aliquet pharetra. </p>
+                              <div class="client-detail">
+                                 <div class="client-name">Alec Thompson</div>
+<p>Accountant</p>
                               </div>
                            </div>
-                           <div class="clearfix"></div>
                         </div>
-                        <div class="item blog-card">
-                           <div class="post-img">
-                              <img src="img/home-blog-post-2.jpg" alt="Post" />
-                              <div class="posted_on"> <span class="date">09</span> <span class="month">Sept.</span> </div>
-                           </div>
-                           <div class="post-detail">
-                              <div class="post-title">
-                                 <a href="blog-right-sidebar.html">It has survived not only five centuries</a>
+                        <div class="item">
+                           <div class="comment-sec">Morbi eu ultrices nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis massa. Suspendisse pharetra, sem lacus convallis augue, non mollis nisl erat vel neque.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp3.jpg" alt="Client">
                               </div>
-                              <div class="posted_by">Posted By - <a href="javascript:void(0)">Admin</a> </div>
-                              <div class="about_post">
-                                 <p>Integer et nulla eget ligula iaculis congue quis eu dui. In tempus nulla at aliquet pharetra. </p>
-                              </div>
-                           </div>
-                           <div class="clearfix"></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="clearfix"></div>
-            </section>
-            <!-- ====== Blog End ====== --> 
-            <!-- ====== Review Start ====== -->
-            <section id="review">
-               <div class="container">
-                  <div class="content">
-                     <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12 section-heading">
-                           <h2>Some Talk of Our Honorable Clients</h2>
-                           <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-xs-12">
-                           <div class="owl-two owl-carousel owl-theme">
-                              <div class="item">
-                                 <div class="comment-sec">Vivamus et vestibulum nibh. Curabitur congue mauris purus, at lacinia eros euismod nec. Nam venenatis tincidunt erat tempor dignissim..</div>
-                                 <div class="client-sec">
-                                    <div class="client-dp">
-                                       <img src="img/client_dp1.jpg" alt="Client">
-                                    </div>
-                                    <div class="client-detail">
-                                       <div class="client-name">Tania Andrew</div>
-                                       <p>Themeforest User</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="item">
-                                 <div class="comment-sec">Vivamus et vestibulum nibh. Curabitur congue mauris purus, at lacinia eros euismod nec. Nam venenatis tincidunt erat tempor dignissim..</div>
-                                 <div class="client-sec">
-                                    <div class="client-dp">
-                                       <img src="img/client_dp2.jpg" alt="Client">
-                                    </div>
-                                    <div class="client-detail">
-                                       <div class="client-name">Alec Thompson</div>
-                                       <p>Accountant</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="item">
-                                 <div class="comment-sec">Vivamus et vestibulum nibh. Curabitur congue mauris purus, at lacinia eros euismod nec. Nam venenatis tincidunt erat tempor dignissim..</div>
-                                 <div class="client-sec">
-                                    <div class="client-dp">
-                                       <img src="img/client_dp3.jpg" alt="Client">
-                                    </div>
-                                    <div class="client-detail">
-                                       <div class="client-name">Molly Robinson</div>
-                                       <p>Manager</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="item">
-                                 <div class="comment-sec">Vivamus et vestibulum nibh. Curabitur congue mauris purus, at lacinia eros euismod nec. Nam venenatis tincidunt erat tempor dignissim..</div>
-                                 <div class="client-sec">
-                                    <div class="client-dp">
-                                       <img src="img/client_dp1.jpg" alt="Client">
-                                    </div>
-                                    <div class="client-detail">
-                                       <div class="client-name">Tania Andrew</div>
-                                       <p>CEO</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="item">
-                                 <div class="comment-sec">Vivamus et vestibulum nibh. Curabitur congue mauris purus, at lacinia eros euismod nec. Nam venenatis tincidunt erat tempor dignissim..</div>
-                                 <div class="client-sec">
-                                    <div class="client-dp">
-                                       <img src="img/client_dp2.jpg" alt="Client">
-                                    </div>
-                                    <div class="client-detail">
-                                       <div class="client-name">Alec Thompson</div>
-                                       <p>Themeforest User</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="item">
-                                 <div class="comment-sec">Vivamus et vestibulum nibh. Curabitur congue mauris purus, at lacinia eros euismod nec. Nam venenatis tincidunt erat tempor dignissim.</div>
-                                 <div class="client-sec">
-                                    <div class="client-dp">
-                                       <img src="img/client_dp3.jpg" alt="Client">
-                                    </div>
-                                    <div class="client-detail">
-                                       <div class="client-name">Molly Robinson</div>
-                                       <p>Manager</p>
-                                    </div>
-                                 </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Molly Robinson</div>
+<p>Manager</p>
                               </div>
                            </div>
                         </div>
@@ -841,10 +579,10 @@
             </section>
             <!-- ====== Review End ====== -->
             <!-- ====== Contact Us Start ====== -->
-            <section id="contact-us">
+            <section id="contact-us" class="index-2">
                <div class="container">
                   <div class="section-heading d-none">
-                     <h2>Contact Us</h2>
+                     <h3>Contact Us</h3>
                   </div>
                   <div class="content">
                      <div class="row">
@@ -859,22 +597,24 @@
                            <h3><a href="#">support@mobfire.com</a></h3>
                         </div>
                         <div class="col-md-7 col-sm-7 col-xs-12 contact-form">
-                           <form action="/index.html">
+                           <form  id="form1">
                               <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <input type="text" placeholder="Full Name" />
+                                 <input type="text" name="fullName" placeholder="Full Name" />
                               </div>
                               <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <input type="text" placeholder="Email" />
-                              </div>
+                                 <input type="text" name="companyName" placeholder="Company Name" />
+                              </div> 
                               <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <input type="text" placeholder="Subject" />
-                              </div>
-                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <textarea placeholder="Message"></textarea>
-                              </div>
+                                 <input type="text" name="phoneNumber" placeholder="Phone Number" />
+                              </div> 
+
                               <div class="col-md-6 col-sm-6 col-xs-12 form-group mar_none">
-                                 <button class="ani-gradiant" type="submit">Send Message<i class="flaticon flaticon-sent-mail"></i></button>
+                                 <button type="submit">Send Message<i class="glyph-icon flaticon-sent-mail"></i></button>
                               </div>
+
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <label name="message" />
+                              </div> 
                            </form>
                         </div>
                      </div>
@@ -902,31 +642,32 @@
             </section>
             <!-- ====== Contact Us End ====== -->
             <!-- ====== Download Application Start ====== -->
-            <section id="download-app">
+            <section id="download-app" class="index-2">
                <div class="container">
                   <div class="section-heading d-none">
-                     <h2>Footer</h2>
+                     <h4>Footer</h4>
                   </div>
                   <div class="content">
                      <div class="col-md-12">
-                     <h2>Perfect landing page for any App</h2>
-                     <p>Mauris elit tortor, finibus eget pellentesque quis, bibendum non dui. Praesent suscipit nunc id erat sodales blandit. Integer gravida augue in rhoncus tempus. Cras ullamcorper dolor ac dictum mollis. Integer turpis purus, lacinia sit amet gravida dapibus, mattis sit amet lectus.</p>
-                     <div class="clearfix"></div>
-                     <div class="download-from">
-                        <div class="download">
-                           <a href="javascript:void(0)"><img src="img/appstore.png" alt="App Store"></a>
-                        </div>
-                        <div class="download">
-                           <a href="javascript:void(0)"><img src="img/playstore.png" alt="Play Store"></a>
+                        <h2>Perfect landing page for any App</h2>
+                         <p>Mauris elit tortor, finibus eget pellentesque quis, bibendum non dui. Praesent suscipit nunc id erat sodales blandit. Integer gravida augue in rhoncus tempus. Cras ullamcorper dolor ac dictum mollis. Integer turpis purus, lacinia sit amet gravida dapibus, mattis sit amet lectus.</p>
+                        <div class="clearfix"></div>
+                        <div class="download-from">
+                           <div class="download">
+                              <a href="https://apps.apple.com/us/app/menu-city/id1518496989"><img src="img/appstore.png" alt="App Store"></a>
+                           </div>
+                           <div class="download">
+                              <a href="https://play.google.com/store/apps/details?id=com.mc.menucity"><img src="img/playstore.png" alt="Play Store"></a>
+                           </div>
                         </div>
                      </div>
-                  </div></div>
+                  </div>
                </div>
             </section>
             <!-- ====== Download Application End ====== -->
          </main>
          <!-- ====== Footer Start ====== -->
-         <footer class="ani-gradiant">
+          <footer class="ani-gradiant">
             <div class="container">
                <div class="section-heading d-none">
                   <h2>Footer</h2>
@@ -944,10 +685,10 @@
                      </div>
                      <div class="clearfix"></div>
                      <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="logo"><a href="index.html"><img src="img/logo-footer.png" alt="MobFire"></a></div>
+                        <div class="logo"><a href="index.html"><img src="img/logo-footer.png" alt="MenuCity"></a></div>
                      </div>
                      <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                        <p>&copy; 2019 MobFire. All Rights Reserved</p>
+                        <p>&copy; 2022 Menu City. All Rights Reserved</p>
                      </div>
                      <div class="col-md-4 col-sm-4 col-xs-12 footer-nav">
                         <a href="#features" title="Features">Features</a>
@@ -960,7 +701,7 @@
          </footer>
          <!-- ====== Footer End ====== -->
       </div>
-      <a href="javascript:void(0)" id="scroll"><span></span></a>
+       <a href="javascript:void(0)" id="scroll"><span></span></a>
       <!-- bootstrap js--> 
       <script src="js/bootstrap.min.js"></script> 
       <!-- Parallax js--> 
