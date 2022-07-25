@@ -80,15 +80,25 @@ function getFormData($form){
 var data = getFormData($form);
 data = JSON.stringify(data)
 
+var phone = $("#phoneNumber").val();
+if(phone){
 
 $.ajax({
   type: "POST",
   url: "http://vpn.gregsys.com:84/api/common/AddCompanyApplication",
   data: data,
-  success: function(){$('#message').html("Thank you, the application has been send, we will contact you shortly");},
+  success: function(){
+   $('#message').html("Thank you, the application has been sent, we will contact you shortly");
+
+   document.getElementById('form1').reset();
+},
   dataType: "json",
   contentType : "application/json"
 });
+
+
+
+}
 
 
           
@@ -106,9 +116,14 @@ $.ajax({
          <header class="index-2" id="home">
             <div class="container">
                <div class="row">
-                  <div class="col-md-2 col-sm-4 col-xs-6 logo">
-                     <a href="index.html"><img src="img/logo.png" alt="Menu City"></a>                   
+                  <div class="col-md-2 col-sm-4 col-xs-6 logo">                   
+                     <a href="index.html"><img src="img/logo.png" alt="Menu City"></a>                                   
                   </div>
+
+                  <div class="col-md-2 col-sm-4 col-xs-6">                   
+                    <h1>Menu City</h1>                                   
+                  </div>
+                  
                   <div class="col-md-10 col-sm-8 col-xs-6">
                      <div class="menu move-right">
                         <div class="toggle">
@@ -178,7 +193,7 @@ $.ajax({
                            data-paddingright="[0,0,0,0]"
                            data-paddingbottom="[0,0,0,0]"
                            data-paddingleft="[0,0,0,0]">
-                           <h1>Menu City</h1>
+                           <h1>Your favorite restaurants visiting you at work</h1>
                         </div>
                         <!-- LAYER NR. 3 -->
                         <div class="tp-caption rev-btn tp-resizeme download-from" id="slide-16-layer-17"
@@ -284,29 +299,29 @@ $.ajax({
                <div class="container">
                   <div class="section-heading">
                      <h2>About Us</h2>
-                     <div class="sub-heading">Quisque fermentum a odio in porta. Sed ut hendrerit odio. Nullam eleifend vestibulum augue id molestie. Sed suscipit tortor eu metus suscipit consectetur. Donec viverra ultrices pharetra. Proin ex ante, ultricies ut urna sit amet, molestie maximus tortor. Integer pellentesque sem non dui fringilla, quis tincidunt elit vulputate. </div>
+                     <div class="sub-heading">Menu City Brings Restaurant Meals to People at Work</div>
                   </div>
                   <div class="content">
                      <div id="counter" class="counter-sec">
                         <div class="row">
                            <div class="counter-column col-md-3 col-sm-3 col-xs-3">
                               <i class="flaticon flaticon-download-to-storage-drive"></i>
-                              <h2><span class="counter">51</span>K+</h2>
+                              <h2><span class="counter">100</span></h2>
                               <div class="title">Downloads</div>
                            </div>
                            <div class="counter-column col-md-3 col-sm-3 col-xs-3">
                               <i class="flaticon flaticon-good-mood-emoticon"></i>
-                              <h2><span class="counter">12</span>K+</h2>
+                              <h2><span class="counter">2</span></h2>
                               <div class="title">Happy Client</div>
                            </div>
                            <div class="counter-column col-md-3 col-sm-3 col-xs-3">
                               <i class="flaticon flaticon-award"></i>
-                              <h2><span class="counter">15</span></h2>
+                              <h2><span class="counter">0</span></h2>
                               <div class="title">Design Awards</div>
                            </div>
                            <div class="counter-column col-md-3 col-sm-3 col-xs-3">
                               <i class="flaticon flaticon-teamwork"></i>
-                              <h2><span class="counter">51</span>K</h2>
+                              <h2><span class="counter">30</span></h2>
                               <div class="title">Active Members</div>
                            </div>
                         </div>
@@ -315,6 +330,71 @@ $.ajax({
                </div>
             </section>
             <!-- ====== About Us End ====== -->
+
+            <!-- ====== Contact Us Start ====== -->
+            <section id="contact-us" class="index-2">
+               <div class="container">
+                  <div class="section-heading d-none">
+                     <h3>Contact Us</h3>
+                  </div>
+                  <div class="content">
+                     <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12 contact-content">
+                           <h6>Contact Us</h6>
+                           <h2>Leave company information to create new one</h2>
+                           <div class="clearfix"></div>
+                           <h6>Call us for imiditate support</h6>
+                           <h3>+374 41198723</h3>
+                           <div class="clearfix"></div>
+                           <h6>Email us for imiditate support</h6>
+                           <h3><a href="mailto:realarmen@gmail.com">realarmen@gmail.com</a></h3>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12 contact-form">
+                           <form  id="form1">
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <input type="text" name="fullName" placeholder="Name" />
+                              </div>
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <input type="text" name="companyName" placeholder="Company Name" />
+                              </div> 
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" />
+                              </div> 
+
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group mar_none">
+                                 <button type="submit">Send Application<i class="glyph-icon flaticon-sent-mail"></i></button>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <label style="margin-top: 30; color: green;" id="message" />
+                              </div> 
+                           </form>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 contact-info">
+                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                              <i class="flaticon flaticon-call"></i>
+                              <h6>Phone No.</h6>
+                              <div class="detail">+374 41198723, +374 93880262</div>
+                           </div>
+                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                              <i class="flaticon flaticon-facebook-placeholder-for-locate-places-on-maps"></i>
+                              <h6>Location</h6>
+                              <div class="detail">Yerevan, Armenia</div>
+                           </div>
+                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                              <i class="flaticon flaticon-mail"></i>
+                              <h6>Email Id</h6>
+                              <div class="detail"><a href="mailto:realarmen@gmail.com">realarmen@gmail.com</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== Contact Us End ====== -->
+
             <!-- ====== Features Start ====== -->
             <section id="features" class="index-2">
                <div class="container">
@@ -519,69 +599,7 @@ $.ajax({
                </div>
             </section>
             <!-- ====== Review End ====== -->
-            <!-- ====== Contact Us Start ====== -->
-            <section id="contact-us" class="index-2">
-               <div class="container">
-                  <div class="section-heading d-none">
-                     <h3>Contact Us</h3>
-                  </div>
-                  <div class="content">
-                     <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12 contact-content">
-                           <h6>Contact Us</h6>
-                           <h2>Don’t Hesitate to contact with us for any kind of information</h2>
-                           <div class="clearfix"></div>
-                           <h6>Call us for imiditate support</h6>
-                           <h3>+374 41198723</h3>
-                           <div class="clearfix"></div>
-                           <h6>Email us for imiditate support</h6>
-                           <h3><a href="#">info@gregsys.com</a></h3>
-                        </div>
-                        <div class="col-md-7 col-sm-7 col-xs-12 contact-form">
-                           <form  id="form1">
-                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <input type="text" name="fullName" placeholder="Full Name" />
-                              </div>
-                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <input type="text" name="companyName" placeholder="Company Name" />
-                              </div> 
-                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <input type="text" name="phoneNumber" placeholder="Phone Number" />
-                              </div> 
-
-                              <div class="col-md-6 col-sm-6 col-xs-12 form-group mar_none">
-                                 <button type="submit">Send Message<i class="glyph-icon flaticon-sent-mail"></i></button>
-                              </div>
-
-                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                 <label name="message" />
-                              </div> 
-                           </form>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 contact-info">
-                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                              <i class="flaticon flaticon-call"></i>
-                              <h6>Phone No.</h6>
-                              <div class="detail">+374 41198723, +374 93880262</div>
-                           </div>
-                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                              <i class="flaticon flaticon-facebook-placeholder-for-locate-places-on-maps"></i>
-                              <h6>Location</h6>
-                              <div class="detail">Yerevan, Armenia</div>
-                           </div>
-                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                              <i class="flaticon flaticon-mail"></i>
-                              <h6>Email Id</h6>
-                              <div class="detail"><a href="#">info@gregsys.com</a>, <a href="#">realarmen@gmail.com</a></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-            <!-- ====== Contact Us End ====== -->
+            
             <!-- ====== Download Application Start ====== -->
             <section id="download-app" class="index-2">
                <div class="container">
