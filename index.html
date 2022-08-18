@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Menu City- Mobile Application Landing Page</title>
+      <meta name="MenuCity" content="MenuCity">
+      <!-- description -->
+      <meta name="MenuCity" content="MenuCity.- Mobile Application Landingpage">
+      <!-- keywords -->
+      <meta name="keywords" content="Mobile Application">
+      <!-- Favicon -->
+      <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+      <!-- Flaticon CSS -->
+      <link rel="stylesheet" href="css/flaticon.css" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- jquery js-->
+      <script src="js/jquery.min.js"></script>
+      <!-- REVOLUTION STYLE SHEETS -->
+      <link rel="stylesheet" type="text/css" href="css/revolution/settings.css" >
+      <!-- REVOLUTION LAYERS STYLES -->
+      <link rel="stylesheet" type="text/css" href="css/revolution/layers.css" >
+      <!-- REVOLUTION NAVIGATION STYLES -->
+      <link rel="stylesheet" type="text/css" href="css/revolution/navigation.css" >
+      <!-- REVOLUTION JS FILES -->
+      <script src="js/revolution/jquery.themepunch.tools.min.js"></script>
+      <script src="js/revolution/jquery.themepunch.revolution.min.js"></script>
+      <!-- PARTICLES ADD-ON FILES -->
+      <link rel='stylesheet' href='css/revolution/revolution.addon.particles.css' type='text/css' media='all' />
+      <script src='js/revolution/revolution.addon.particles.min.js'></script>
+      <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->   
+      <script src="js/revolution/revolution.extension.actions.min.js"></script>
+      <script src="js/revolution/revolution.extension.layeranimation.min.js"></script>
+      <script src="js/revolution/revolution.extension.navigation.min.js"></script>
+      <script src="js/revolution/revolution.extension.parallax.min.js"></script>
+      <script src="js/revolution/revolution.extension.slideanims.min.js"></script>
+      <!-- Owl Carousel stylesheet -->
+      <link rel="stylesheet" href="css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+      <!-- Defualt CSS -->
+      <link rel="stylesheet" href="css/defualt.css" />
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="css/style.css" />
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css" />
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+
+     
+   </head>
+   <body>
+
+      <script type="text/javascript">
+
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
+
+
+         $(document).ready(function ( ) {
+        $("#form1").submit(function () {
+
+         
+         var $form = $("#form1");
+var data = getFormData($form);
+data = JSON.stringify(data)
+
+var phone = $("#phoneNumber").val();
+if(phone){
+
+$.ajax({
+  type: "POST",
+  url: "http://vpn.gregsys.com:84/api/common/AddCompanyApplication",
+  data: data,
+  success: function(){
+   $('#message').html("Thank you, the application has been sent, we will contact you shortly");
+
+   document.getElementById('form1').reset();
+},
+  dataType: "json",
+  contentType : "application/json"
+});
+
+
+
+}
+
+
+          
+            return false;
+        });
+      })
+    </script>
+
+      <!-- ====== Preloader ====== -->
+      <div class="preloader js-preloader flex-center">
+         <img src="img/loader.gif" alt="Loader" />
+      </div>
+      <div class="wraper">
+         <!-- ====== Header Start ====== -->
+         <header class="index-2" id="home">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-2 col-sm-4 col-xs-6 logo">                   
+                     <a href="index.html"><img src="img/logo.png" alt="Menu City"></a>                                   
+                  </div>
+
+                  <div class="col-md-2 col-sm-4 col-xs-6">                   
+                    <h1>Menu City</h1>                                   
+                  </div>
+                  
+                  <div class="col-md-10 col-sm-8 col-xs-6">
+                     <div class="menu move-right">
+                        <div class="toggle">
+                           <span></span>
+                        </div>
+                        <ul>
+                           <li><a href="#home" title="Homepage">Homepage</a></li>
+                           <li><a href="#about-us" title="About Us">About Us</a></li>
+                           <li><a href="#features" title="Features">Features</a></li>
+                           <li><a href="#screenshots" title="Screenshots">Screenshots</a></li>                           
+                           <li><a href="#review" title="Reviews">Reviews</a></li>
+                           <li><a href="#contact-us" title="Contact Us">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!-- ====== Header End ====== -->
+         <!-- ====== Slider Start ====== -->
+         <div class="slider-2">
+            <div id="rev_slider_8_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="particle-effect-three6" data-source="gallery" style="background:#ffffff;padding:0px;">
+               <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+               <div id="rev_slider_8_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+                  <ul>
+                     <!-- SLIDE  -->
+                     <li data-index="rs-16" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Example One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="img/transparent.png" data-bgcolor='#ffffff' style='background:#ffffff' alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption" 
+                           id="slide-16-layer-15" 
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                           data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                           data-width="full-proportional"
+                           data-height="full-proportional"
+                           data-whitespace="nowrap"
+                           data-type="image" 
+                           data-basealign="slide" 
+                           data-responsive_offset="off" 
+                           data-responsive="off"
+                           data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['inherit','inherit','inherit','inherit']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,0]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,0,0,0]"
+                           data-blendmode="overlay"
+                           style="z-index: 5;"><img src="img/blurbg7.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1920" height="1080" data-no-retina> </div>
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption tp-resizeme heading" 
+                           id="slide-16-layer-6" 
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                           data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                           data-fontsize="['60','60','40','40']"
+                           data-lineheight="['80','80','60','60']"
+                           data-width="none"
+                           data-height="none"
+                           data-whitespace="nowrap"
+                           data-type="text" 
+                           data-responsive_offset="on" 
+                           data-wrapper_class="tp-nopointer" 
+                           data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"sX:2;sY:3;opacity:0;fb:10px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
+                           data-textAlign="['center','center','center','center']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[0,0,0,0]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[0,0,0,0]">
+                           <h1>Your favorite restaurants visiting you at work</h1>
+                        </div>
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption rev-btn tp-resizeme download-from" id="slide-16-layer-17"
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                           data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
+                           data-whitespace="nowrap"
+                           data-type="button"
+                           data-actions=''
+                           data-responsive_offset="on"
+                           data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"y:100px;sX:2;sY:3;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;","style":"c:rgba(255,255,255,1);"}]'
+                           data-textAlign="['inherit','inherit','inherit','inherit']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[35,35,35,35]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[35,35,35,35]"
+                           data-blendmode="multiply"
+                           style="z-index: 8; white-space: nowrap; outline:none;">
+                           <div class="download">
+                              <a href="https://apps.apple.com/us/app/menu-city/id1518496989"><img src="img/appstore.png" alt="App Store"></a>
+                           </div>
+                           <div class="download">
+                              <a href="https://play.google.com/store/apps/details?id=com.mc.menucity"><img src="img/playstore.png" alt="Play Store"></a>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <!-- END REVOLUTION SLIDER -->
+               <script>
+                  var tpj=jQuery;
+                  var revapi8;
+                  tpj(document).ready(function() {
+                     if(tpj("#rev_slider_8_1").revolution == undefined){
+                        revslider_showDoubleJqueryError("#rev_slider_8_1");
+                     }else{
+                        revapi8 = tpj("#rev_slider_8_1").show().revolution({
+                           sliderType:"hero",
+                           jsFileLocation:"revolution/js/",
+                           sliderLayout:"fullscreen",
+                           dottedOverlay:"none",
+                           delay:9000,
+                           particles: {startSlide: "first", endSlide: "last", zIndex: "1",
+                              particles: {
+                                 number: {value: 300}, color: {value: "#000000"},
+                                 shape: {
+                                    type: "circle", stroke: {width: 0, color: "#ffffff", opacity: 1},
+                                    image: {src: ""}
+                                 },
+                                 opacity: {value: 0.1, random: false, min: 0.25, anim: {enable: false, speed: 1, opacity_min: 0, sync: false}},
+                                 size: {value: 1, random: true, min: 0.5, anim: {enable: false, speed: 40, size_min: 1, sync: false}},
+                                 line_linked: {enable: true, distance: 80, color: "#000000", opacity: 0.35, width: 1},
+                                 move: {enable: true, speed: 1, direction: "right", random: true, min_speed: 3, straight: false, out_mode: "out"}},
+                              interactivity: {
+                                 events: {onhover: {enable: true, mode: "repulse"}, onclick: {enable: true, mode: "bubble"}},
+                                 modes: {grab: {distance: 400, line_linked: {opacity: 0.5}}, bubble: {distance: 400, size: 100, opacity: 1}, repulse: {distance: 75}}
+                              }
+                           },
+                           navigation: {
+                           },
+                           responsiveLevels:[1240,1024,778,480],
+                           visibilityLevels:[1240,1024,778,480],
+                           gridwidth:[1240,1024,778,480],
+                           gridheight:[868,768,960,720],
+                           lazyType:"none",
+                           parallax: {
+                              type:"scroll",
+                              origo:"slidercenter",
+                              speed:400,
+                              levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,0,55],
+                           },
+                           shadow:0,
+                           spinner:"off",
+                           autoHeight:"off",
+                           fullScreenAutoWidth:"off",
+                           fullScreenAlignForce:"off",
+                           fullScreenOffsetContainer: "",
+                           fullScreenOffset: "60px",
+                           disableProgressBar:"on",
+                           hideThumbsOnMobile:"off",
+                           hideSliderAtLimit:0,
+                           hideCaptionAtLimit:0,
+                           hideAllCaptionAtLilmit:0,
+                           debugMode:false,
+                           fallbacks: {
+                              simplifyAll:"off",
+                              disableFocusListener:false,
+                           }
+                        });
+                     }
+                  
+                         RsParticlesAddOn(revapi8);
+                  });   /*ready*/
+               </script>
+            </div>
+            <div class="about_mobile">
+               <img src="img/iphone-l.png" class="img-responsive" alt="Iphone" />
+            </div>
+         </div>
+         <!-- ====== Slider End ====== -->
+         <main class="index-2">
+            <!-- ====== About Us Start ====== -->
+            <section id="about-us" class="index-2">
+               <div class="container">
+                  <div class="section-heading">
+                     <h2>About Us</h2>
+                     <div class="sub-heading">Menu City Brings Restaurant Meals to People at Work</div>
+                  </div>
+                  <div class="content">
+                     <div id="counter" class="counter-sec">
+                        <div class="row">
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-download-to-storage-drive"></i>
+                              <h2><span class="counter">100</span></h2>
+                              <div class="title">Downloads</div>
+                           </div>
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-good-mood-emoticon"></i>
+                              <h2><span class="counter">2</span></h2>
+                              <div class="title">Happy Client</div>
+                           </div>
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-award"></i>
+                              <h2><span class="counter">0</span></h2>
+                              <div class="title">Design Awards</div>
+                           </div>
+                           <div class="counter-column col-md-3 col-sm-3 col-xs-3">
+                              <i class="flaticon flaticon-teamwork"></i>
+                              <h2><span class="counter">30</span></h2>
+                              <div class="title">Active Members</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== About Us End ====== -->
+
+            <!-- ====== Contact Us Start ====== -->
+            <section id="contact-us" class="index-2">
+               <div class="container">
+                  <div class="section-heading d-none">
+                     <h3>Contact Us</h3>
+                  </div>
+                  <div class="content">
+                     <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12 contact-content">
+                           <h6>Contact Us</h6>
+                           <h2>Don't have Menu City where you work yet? Get in touch. We can help!</h2>
+                           <div class="clearfix"></div>
+                           <h6>Call us for imiditate support</h6>
+                           <h3>+374 41198723</h3>
+                           <div class="clearfix"></div>
+                           <h6>Email us for imiditate support</h6>
+                           <h3><a href="mailto:realarmen@gmail.com">realarmen@gmail.com</a></h3>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12 contact-form">
+                           <form  id="form1">
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <input type="text" name="fullName" placeholder="Name" />
+                              </div>
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <input type="text" name="companyName" placeholder="Company Name" />
+                              </div> 
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" />
+                              </div> 
+
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group mar_none">
+                                 <button type="submit">Send Application<i class="glyph-icon flaticon-sent-mail"></i></button>
+                              </div>
+
+                              <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                 <label style="margin-top: 30; color: green;" id="message" />
+                              </div> 
+                           </form>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 contact-info">
+                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                              <i class="flaticon flaticon-call"></i>
+                              <h6>Phone No.</h6>
+                              <div class="detail">+374 41198723, +374 93880262</div>
+                           </div>
+                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                              <i class="flaticon flaticon-facebook-placeholder-for-locate-places-on-maps"></i>
+                              <h6>Location</h6>
+                              <div class="detail">Yerevan, Armenia</div>
+                           </div>
+                           <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                              <i class="flaticon flaticon-mail"></i>
+                              <h6>Email Id</h6>
+                              <div class="detail"><a href="mailto:realarmen@gmail.com">realarmen@gmail.com</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== Contact Us End ====== -->
+
+            <!-- ====== Features Start ====== -->
+            <section id="features" class="index-2">
+               <div class="container">
+                  <div class="content">
+                     <div class="row">
+                        <div class="col-md-9 col-sm-9 col-xs-12 move-right">
+                           <div class="col-md-6 col-sm-12 col-xs-12 section-heading">
+                              <h2>The Features</h2>
+                              <div class="sub-heading">Corporate Lunch Catering Service for Any Office Occasion.
+<br>
+                                 Other app features include:
+                                 <br>
+- Takeaway: You have an opportunity to take away your favorite drink or dish
+<br>
+- Reserve a table: Find your table for any occasion
+<br>
+- Use QR code to sit in the table, make order and pay for them from mobile and collect bonuses.
+<br>
+- Use Menu City regularly and receive special offers and discounts
+<br>
+- Pay with cash from the bonus card or a credit card
+<br>
+- Use mobile as a Credit Card to pay for any order
+<br>
+- The app is available in Armenian, Russian and English
+<br>
+- New updates and features to be released continuously
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-system"></i>
+                                 </div>
+                                 <h6>Powerfull System</h6>
+                                 <p>iOS and Android mobile apps for consumers, admin panel for Business and admin panel for Restaurant</p>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-avatar"></i>
+                                 </div>
+                                 <h6>Free Accounts</h6>
+                                 <p>For users accout creation and use is free and always will be.</p>
+                              </div>
+                           </div> 
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-global"></i>
+                                 </div>
+                                 <h6>Location & Language</h6>
+                                 <p>Application is available in Yerevan and available in 3 langauges: Armenian, English and Russian</p>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="card box-shadow">
+                                 <div class="icon">
+                                    <i class="flaticon flaticon-shield"></i>
+                                 </div>
+                                 <h6>Updates & Security</h6>
+                                 <p>User registers with phone number confirmed, JSON Web Token is used for securing accounts.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== Features End ====== -->
+            <!-- ====== Screenshots Start ====== -->
+            <section id="screenshots" class="index-2">
+               <div class="container">
+                  <div class="section-heading on-dark center">
+                     <h2>Screenshots</h2>
+                     <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
+                  </div>
+                  <div class="content">
+                     <div class="owl-three owl-carousel owl-theme">
+                        <div class="item">
+                           <img src="img/screen-1.png" alt="Iphone" /> 
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-2.png" alt="Iphone" />
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-3.png" alt="Iphone" />
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-4.png" alt="Iphone" />
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-5.png" alt="Iphone" />
+                        </div>
+                        <div class="item">
+                           <img src="img/screen-6.png" alt="Iphone" /> 
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-7.png" alt="Iphone" />
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-8.png" alt="Iphone" />
+                        </div>
+                        <div class="item"> 
+                           <img src="img/screen-9.png" alt="Iphone" />
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== Screenshots End ====== -->            
+            <!-- ====== Review Start ====== -->
+            <section id="review" class="index-2">
+               <div class="container">
+                  <div class="section-heading center">
+                     <h2>Reviews</h2>
+                     <div class="sub-heading">Suspendisse at justo nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales aliquet porta. Nam scelerisque ullamcorper augue quis convallis.</div>
+                  </div>
+                  <div class="content">
+                     <div class="owl-two owl-carousel owl-theme">
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp1.jpg" alt="Client">
+                              </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Tania Andrew</div>
+                                <p>Themeforest User</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp2.jpg" alt="Client">
+                              </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Alec Thompson</div>
+                                    <p>Accountant</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp3.jpg" alt="Client">
+                              </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Molly Robinson</div>
+                                    <p>Manager</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp1.jpg" alt="Client">
+                              </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Tania Andrew</div>
+<p>Themeforest User</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="comment-sec">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi porta nec justo vitae egestas. Suspendisse maximus ipsum neque, sit amet vehicula ipsum sagittis ac. Aliquam urna urna.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp2.jpg" alt="Client">
+                              </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Alec Thompson</div>
+<p>Accountant</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="comment-sec">Morbi eu ultrices nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis massa. Suspendisse pharetra, sem lacus convallis augue, non mollis nisl erat vel neque.</div>
+                           <div class="client-sec">
+                              <div class="client-dp">
+                                 <img src="img/client_dp3.jpg" alt="Client">
+                              </div>
+                              <div class="client-detail">
+                                 <div class="client-name">Molly Robinson</div>
+<p>Manager</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="ocean">
+                     <div class="wave"></div>
+                     <div class="wave"></div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== Review End ====== -->
+            
+            <!-- ====== Download Application Start ====== -->
+            <section id="download-app" class="index-2">
+               <div class="container">
+                  <div class="section-heading d-none">
+                     <h4>Footer</h4>
+                  </div>
+                  <div class="content">
+                     <div class="col-md-12">
+                        <h2>Food at work: powered by local chefs & restaurants, loved by employees</h2>
+                         <p>You shouldn't be limited by the food options within walking distance of your desk. Menu City opens up your possibilities by bringing a rotating variety of restaurants right where you work.</p>
+                        <div class="clearfix"></div>
+                        <div class="download-from">
+                           <div class="download">
+                              <a href="https://apps.apple.com/us/app/menu-city/id1518496989"><img src="img/appstore.png" alt="App Store"></a>
+                           </div>
+                           <div class="download">
+                              <a href="https://play.google.com/store/apps/details?id=com.mc.menucity"><img src="img/playstore.png" alt="Play Store"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ====== Download Application End ====== -->
+         </main>
+         <!-- ====== Footer Start ====== -->
+          <footer class="ani-gradiant">
+            <div class="container">
+               <div class="section-heading d-none">
+                  <h2>Footer</h2>
+               </div>
+               <div class="content">
+                  <div class="row">
+                     <div class="social_media">
+                        <ul>
+                           <li><a href="javascript:void(0)"><i class="flaticon flaticon-facebook-logo"></i></a></li>
+                           <li><a href="javascript:void(0)"><i class="flaticon flaticon-twitter-logo-silhouette"></i></a></li>
+                           <li><a href="javascript:void(0)"><i class="flaticon flaticon-google-plus-logo"></i></a></li>
+                           <li><a href="javascript:void(0)"><i class="flaticon flaticon-linkedin-logo"></i></a></li>
+                           <li><a href="javascript:void(0)"><i class="flaticon flaticon-instagram"></i></a></li>
+                        </ul>
+                     </div>
+                     <div class="clearfix"></div>
+                     <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="logo"><a href="index.html"><img src="img/LogoHeader.svg" alt="MenuCity"></a></div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                        <p>&copy; 2022 Menu City. All Rights Reserved</p>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-12 footer-nav">
+                        <a href="#features" title="Features">Features</a>                        
+                        <a href="#contact-us" title="Contact Us">Contact Us</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- ====== Footer End ====== -->
+      </div>
+       <a href="javascript:void(0)" id="scroll"><span></span></a>
+      <!-- bootstrap js--> 
+      <script src="js/bootstrap.min.js"></script> 
+      <!-- Parallax js--> 
+      <script src="js/jquery.parallax-1.1.3.js"></script> 
+      <!-- Waypoints js -->
+      <script src="js/waypoints.min.js"></script>
+      <!-- Preloader js -->
+      <script src="js/jquery.preloadinator.min.js"></script>
+      <script>
+         $('.js-preloader').preloadinator({
+           minTime: 2000
+         });
+      </script>
+      <!-- Counter-up js -->
+      <script src="js/jquery.counterup.min.js"></script>
+      <!-- owl.carousel js -->
+      <script src="js/owl.carousel.js"></script>
+      <script src="js/owl.custom.js"></script>
+      <!-- Custom js -->
+      <script src="js/custom.js"></script> 
+   </body>
+</html>
